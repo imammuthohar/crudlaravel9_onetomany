@@ -45,7 +45,8 @@
                         </div>    
                                              
                                  <div class="form-group">
-                                    <label class="font-weight-bold">Daftar Komentar</label>
+                                    <label class="font-weight-bold">Daftar Komentar <span class="badge rounded-pill text-bg-warning">6</span>
+                                        <span class="badge rounded-pill text-bg-info">8</span></label>
                                     @foreach($post->comments()->get() as $comment)
                                     
                                     <textarea class="form-control" readonly name="" id="" cols="5" rows="2">{{ $comment->comment }}</textarea>

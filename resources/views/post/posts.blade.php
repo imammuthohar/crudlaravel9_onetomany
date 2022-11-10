@@ -26,18 +26,10 @@
                     <tbody>
                         @foreach($posts as $post)
                             <tr>
+                               
+                                                         
+                                <td> <a href="{{ route('posts.show',$post->id)   }} "  > {{ $post->title, $post->post_id  }}</a>  <span class="badge rounded-pill text-bg-warning">6</span> komentar</td>
                                 
-                                
-                                <td> <a href="{{ route('posts.show',$post->id)   }} "> {{ $post->title, $post->post_id  }}</a></td>
-                                {{-- <td>
-                                    @foreach($post->comments()->get() as $comment)
-                                        <div class="card shadow-sm mb-2">
-                                            <div class="card-body">
-                                                <i class="fa fa-comments"></i> {{ $comment->comment }}
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </td> --}}
                                 <td><a class="btn btn-info" href="{{ route('posts.show', $post->id) }} ">Detail</a> 
                                     
                                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('posts.destroy', $post->id) }} " method="post" >

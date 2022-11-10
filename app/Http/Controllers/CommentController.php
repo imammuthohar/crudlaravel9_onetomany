@@ -33,8 +33,8 @@ class CommentController extends Controller
         //validate form
         // dd($request->all());
         $this->validate($request, [
-            'title' =>'required|min:0',
-            'content' =>'required|min:0',
+            // 'title' =>'required|min:0',
+            // 'content' =>'required|min:0',
             'comment' =>'required|min:0'
         ]);
 

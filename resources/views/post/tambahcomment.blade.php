@@ -16,23 +16,6 @@
                     <div class="card-body">
                         <form action="{{ route('comment.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                           <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h2>{{ $post->id }} - {{ $post->title }} </h2> 
-                                       
-                                    </div>
-                                    <div class="card-body">
-                                      <h5 class="card-title">Special title treatment</h5>
-                                      <p class="card-text"><p> {{ $post->content }}</p> </p>
-                                      <a href="#" class="btn btn-primary">comment</a>
-                                    </div>
-                                  </div>
-
-                            </div>
-                        </div>    
-                        <div class="form-group">                            
                             <div class="form-group">
                                 <label class="font-weight-bold">ID</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="post_id" value="{{ $post->id }} " readonly>
@@ -44,34 +27,28 @@
                                     </div>
                                 @enderror
                             </div>
+                           <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h6> {{ $post->title }} </h6> 
+                                        
+                                    </div>
+                                    <div class="card-body">
+                                      
+                                      <p class="card-text"><p> {{ $post->content }}</p> </p>
+                                      
+                                    </div>
+                                  </div>
 
-                                <div class="form-group">
-                                    <label class="font-weight-bold">JUDUL</label>
-                                    <input readonly type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $post->title }} " placeholder="Masukkan Judul Post">
-                                
-                                    <!-- error message untuk title -->
-                                    @error('title')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-    
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Isi KONTEN</label>
-                                    <textarea readonly class="form-control @error('content') is-invalid @enderror" name="content" rows="5" >{{ $post->content }}</textarea>
-                                    <!-- error message untuk content -->
-                                    @error('content')
-                                        <div class="alert alert-danger mt-2">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
+                            </div>
+                        </div>    
+                                             
+                                 <div class="form-group">
                                     <label class="font-weight-bold">Daftar Komentar</label>
                                     @foreach($post->comments()->get() as $comment)
-                                    <input class="form-control" type="text" name="datakomentar" value="{{ $comment->comment }}" readonly>
+                                    
+                                    <textarea class="form-control" readonly name="" id="" cols="5" rows="2">{{ $comment->comment }}</textarea>
                                     @endforeach
 
 
@@ -79,9 +56,7 @@
                                 
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tulis Komentar</label>
-                                    <textarea class="form-control @error('content') is-invalid @enderror" name="comment" rows="5" placeholder="Masukkan komentar">
-        
-                                    
+                                    <textarea class="form-control @error('content') is-invalid @enderror" name="comment" rows="5" placeholder="Masukkan komentar">                                   
                                     </textarea>
                                 
                                     <!-- error message untuk content -->

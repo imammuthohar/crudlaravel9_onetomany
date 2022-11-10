@@ -17,7 +17,6 @@ Route::get('/posts', function () {
     return view('welcome');
 });
 
-// Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
-// Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
+
 Route::resource('/posts', \App\Http\Controllers\PostController::class);
 Route::resource('/comment', \App\Http\Controllers\CommentController::class);

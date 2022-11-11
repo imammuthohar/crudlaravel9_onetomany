@@ -50,7 +50,8 @@ class CommentController extends Controller
 
         // dd($request->all());
         //redirect to index
-        return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        // return redirect()->route('posts.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->back()->with(['success' => 'Data Berhasil Disimpan!']);
     }
 
 

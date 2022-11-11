@@ -27,9 +27,10 @@
                                     </div>
                                 @enderror
                             </div>
-                           <div class="row">
+                        
+                            <div class="row">
                             <div class="col">
-                                <div class="card">
+                                <div class="card mb-3">
                                     <div class="card-header">
                                         <h6> {{ $post->title }} </h6> 
                                         
@@ -43,7 +44,7 @@
 
                             </div>
                         </div>    
-                                             
+{{--                                              
                                  <div class="form-group">
                                     <label class="font-weight-bold">Daftar Komentar <span class="badge rounded-pill text-bg-warning">6</span>
                                         <span class="badge rounded-pill text-bg-info">8</span></label>
@@ -51,10 +52,30 @@
                                     
                                     <textarea class="form-control" readonly name="" id="" cols="5" rows="2">{{ $comment->comment }}</textarea>
                                     @endforeach
+                                </div> --}}
+                        {{-- ini baris komentar --}}
+                                <div class="container" >
+                                    <div class="row">
+                                        <div class="col">
+                                            @foreach($post->comments()->get() as $comment)
+                                           
+                                            
+                                                
 
+                                            {{-- <div class="alert alert-success" role="alert">
+                                                {{ $comment->comment }}
+                                              </div> --}}
 
+                                              <div class="card mb-1">
+                                                <div class="card-body .bg-secondary">
+                                                    {{ $comment->comment }}
+                                                </div>
+                                              </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
-                                
+                               
                                 <div class="form-group">
                                     <label class="font-weight-bold">Tulis Komentar</label>
                                     <textarea class="form-control @error('content') is-invalid @enderror" name="comment" rows="5" placeholder="Masukkan komentar">                                   

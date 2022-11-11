@@ -37,22 +37,15 @@
                                     </div>
                                     <div class="card-body">
                                       
-                                      <p class="card-text"><p> {{ $post->content }}</p> </p>
+                                      <p class="card-text"><p> {!! $post->content !!}</p> </p>
                                       
                                     </div>
                                   </div>
 
                             </div>
                         </div>    
-{{--                                              
-                                 <div class="form-group">
-                                    <label class="font-weight-bold">Daftar Komentar <span class="badge rounded-pill text-bg-warning">6</span>
-                                        <span class="badge rounded-pill text-bg-info">8</span></label>
-                                    @foreach($post->comments()->get() as $comment)
-                                    
-                                    <textarea class="form-control" readonly name="" id="" cols="5" rows="2">{{ $comment->comment }}</textarea>
-                                    @endforeach
-                                </div> --}}
+                                                                      
+             
                         {{-- ini baris komentar --}}
                                 <div class="container" >
                                     <div class="row">
@@ -60,11 +53,7 @@
                                             @foreach($post->comments()->get() as $comment)
                                            
                                             
-                                                
-
-                                            {{-- <div class="alert alert-success" role="alert">
-                                                {{ $comment->comment }}
-                                              </div> --}}
+                                         
 
                                               <div class="card mb-1">
                                                 <div class="card-body .bg-secondary">
